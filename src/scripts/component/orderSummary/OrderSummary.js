@@ -8,11 +8,12 @@ class OrderSummary extends Component {
     // functional component   
     render () {
         const ingredientSummary = Object.keys(this.props.ingredients)
-        .map(igKey => {
-            return  <li key={igKey}>
-                        <span style={{textTransform: "capitalize"}}>{igKey}</span>: {this.props.ingredients[igKey]} 
-                    </li>
-        })
+            .map(igKey => {
+                return  (
+                    <li key={igKey}>
+                            <span style={{textTransform: "capitalize"}}>{igKey}</span>: {this.props.ingredients[igKey]} 
+                    </li>);
+            })
         return (
             <Aux>
                 <h3>Your Order</h3>
@@ -22,7 +23,7 @@ class OrderSummary extends Component {
                 </ul>
                 <p><strong>Total Price: {this.props.price.toFixed(2)}</strong></p>
                 <p>Continue to Chechout?</p>
-                <Button btnType="Danger" clicked={this.props.purchaseCanceled}>CANCEL</Button>
+                <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>
                 <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
             </Aux>
         )
@@ -31,7 +32,7 @@ class OrderSummary extends Component {
 
 OrderSummary.propTypes = {
      ingredients: PropTypes.object,
-     purchaseCanceled: PropTypes.func,
+     purchaseCancelled: PropTypes.func,
      purchaseContinued: PropTypes.func,
      price: PropTypes.number
 }
