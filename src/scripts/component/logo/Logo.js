@@ -5,7 +5,7 @@ import PropTypes  from "prop-types";
 
 const logo = (props) => (
     <div className="Logo" style={{height: props.height}}>
-        <img src="./images/burger-logo.png" alt="MyBurger" />
+        <img src="static/burger-logo.png" alt="MyBurger" />
     </div>
 );
 
